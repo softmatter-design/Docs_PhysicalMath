@@ -1,0 +1,473 @@
+\documentclass[unicode,12pt,aspectratio=169]{beamer}
+
+\input{pre.tex}
+
+\title{～数学的な事項と物理モデルに関する基礎～}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+%% 目次 (必要なければ省略)
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents
+\end{frame}
+
+\begin{frame}
+	\frametitle{ここでのお話}
+		物理モデルを理解するために必要となる「量」、「次元」、「単位」についての確認を行います。
+			\begin{itemize}
+				\item そもそも「量」とは？
+				\item 量を定義するとに必要となる「次元」と「単位」
+			\end{itemize} 
+\end{frame}
+
+\section{物理モデルを理解するために\\「量、次元、単位」}
+\subsection{物理モデルを理解するために、「量」、「次元」、「単位」}
+\begin{frame}
+\frametitle{物理モデルを理解するために}
+	\begin{block}{人間の直感的な理解やイメージは}
+		\begin{itemize}
+			\item オノマトペのように曖昧な言葉になりがち
+			\item それだと受け取りが人によって異なる場合も
+		\end{itemize}
+	\end{block}
+	
+	\begin{block}<2->{事柄を定量的に取り扱おうとすると？}
+		\begin{itemize}
+			\item 数値化して大小を比較しようとする
+		\end{itemize}
+	\end{block}
+
+	\begin{alertblock}<3>{量というもの}
+		\begin{itemize}
+			\item 数値そのものには大小を表す意味しかありません
+			\item 「量」というかたちとして取り扱う必要があります
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{物理モデルを理解するために}
+	% 「量とは」どのようなものであるかを考えてみます。
+	\begin{columns}[c, onlytextwidth]
+		\column{.6\linewidth}
+			\begin{block}{基本となる量とは（ちょっと天下り）}
+		\begin{itemize}
+			\item 我々が物事の評価を行うときに
+			\begin{itemize}
+				\item 「定性的に考えて区別」するために
+				\item 「定量的に決定できる」もの
+			\end{itemize}
+			\item そして、物理的に考えるときには
+			\begin{itemize}
+				\item 「\alert{次元}が決まって」
+				\item 「定められた\alert{単位の倍数}」として表す
+			\end{itemize}
+			\item 工学的には「測定方法によって定義」
+		\end{itemize}
+	\end{block}
+		\column{.38\linewidth}
+			\begin{alertblock}<2>{量を議論するためには}
+        \begin{itemize}
+            \item 次元と単位に注意して
+            \item 測定方法を定義
+        \end{itemize}
+    \end{alertblock}
+	\end{columns}
+	% \begin{block}{基本となる量とは（ちょっと天下り）}
+	% 	\begin{itemize}
+	% 		\item 我々が物事の評価を行うときに
+	% 		\begin{itemize}
+	% 			\item 「定性的に考えて区別」するために
+	% 			\item 「定量的に決定できる」もの
+	% 		\end{itemize}
+	% 		\item そして、物理的に考えるときには
+	% 		\begin{itemize}
+	% 			\item 「\alert{次元}が決まって」
+	% 			\item 「定められた\alert{単位の倍数}」として表す
+	% 		\end{itemize}
+	% 		\item 工学的には、「測定方法によって定義」される
+	% 	\end{itemize}
+	% \end{block}
+    % \begin{alertblock}<2>{量を議論するためには}
+    %     \begin{itemize}
+    %         \item 次元と単位に注意して
+    %         \item 測定方法を定義
+    %     \end{itemize}
+    % \end{alertblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{「量」、「次元」、「単位」の定義（JIS Z 8103「計測用語」）}
+	\footnotesize
+	% \begin{block}{「計測用語」についてまとめた JIS Z 8103 では}
+		\begin{description}
+			\item[量] 現象、物体又は物質の持つ属性で、定性的に区別でき、かつ、定量的に決定できるもの。
+			\item[物理量] 物理学における一定の理論体系の下で次元が確定し、定められた単位の倍数として表すことができる量。
+			\item[工学量] 複数の物理的性質に関係する量で、測定方法によって定義される工業的に有用な量。硬さ、表面粗さ等。
+			\item[量の次元] ある量体系に含まれるある一つの量を、その体系の基本量を表す因数のべき乗の積として示す表現。
+			\item[量体系] 一般的な意味で、定まった関係が存在する量の集合。
+			\item[単位] 取決めによって定義され、採用された特定の量であって、同種の他の量の大きさを表すために比較されるもの。
+		\end{description}
+	% \end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{量の次元}
+	\begin{itemize}
+		\item さきほど示した定義で「量の次元」は
+		\begin{itemize}
+			\item 「ある量体系に含まれるある一つの量を、その体系の基本量を表す因数のべき乗の積として示す表現。」
+			\item<2-> \textcolor{blue}{ちょっと、よくわからない。}
+		\end{itemize}
+		\item<3-> 言葉を足して言い換えてみると
+		\begin{itemize}
+			\item 「何らかの関係が成り立つ量の集合において、一つの量を、その関係の基本となる量の種類とそのべき乗だけで表す考え方」
+			\item<4-> \textcolor{blue}{これでもわかりにくい}
+		\end{itemize}
+	\end{itemize}
+	\begin{alertblock}<5>{もっと直感的な「次元」のイメージ}
+		「次元」とは、複合的なイメージとしての「ある量」を「基本量の積と商で表す」考え方のこと。
+	\end{alertblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{量の性質}
+	\begin{alertblock}{量の演算}
+		\begin{itemize}
+			\item \textcolor{red}{同じ種類の量同士は和と差}の演算が定義可能
+			\begin{itemize}
+				\item 結果は同じ種類の量
+				\item 足したり引いたりすることでその大きさが変化
+				\item \textcolor{red}{異なる種類の量の和や差には意味がない}
+			\end{itemize}
+			\item 同じ、あるいは、異なる種類の量同士でも、\\ \textcolor{red}{積や商が定義}できることがあり
+			\begin{itemize}
+				\item 長さ同士の積は面積
+				\item 長さの時間による商は速さ
+			\end{itemize}
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{国際量体系での定義}
+
+	国際量体系（ISQ: International System of Quantities）の体系にしたがって、表のように7つの基本量が定められています。
+	\begin{center}
+		\begin{tabular}{|c|c||c|c|} \hline
+			基本量 		& 次元の記号 & SI単位 		& 単位の記号\\ \hline \hline
+			長さ		& L			& メートル 		& m \\ \hline
+			質量		& M			& キログラム 	& kg \\ \hline
+			時間		& T			& 秒 			& s \\ \hline
+			電流		& I			& アンペア 		& A \\ \hline
+			熱力学温度	& $\Theta$	& ケルビン 		& K \\ \hline
+			物質量		& N			& モル 			& mol \\ \hline
+			光度		& J			& カンデラ 		& cd \\ \hline
+		\end{tabular}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{次元の関係式}
+	\footnotesize
+	\begin{itemize}
+		\item 量 $\mathrm{Q}$ の次元は、角括弧で括って $[\mathrm{Q}]$ で表記する
+		\item このとき、長さという基本量に関わる量体系は
+			\begin{align*}
+				\begin{cases}
+					[\text{面積}] = [\text{長さ}]^2 = [\mathrm{L}^2] \\[8pt]
+					[\text{体積}] = [\text{長さ}]^3 = [\mathrm{L}^3]
+				\end{cases}
+			\end{align*}
+		\item 力学に関係する物理量は異種の基本量の組み合わせで
+			\begin{align*}
+				\begin{cases}
+					[\text{速さ}] = [\text{長さ}][\text{時間}]^{-1} = [\mathrm{LT}^{-1}] \\[8pt]
+					[\text{加速度}] = [\text{長さ}][\text{時間}]^{-2} = [\mathrm{LT}^{-2}] \\[8pt]
+					[\text{力}] = [\text{質量}][\text{長さ}][\text{時間}]^{-2} = [\mathrm{MLT}^{-2}]
+					%  \\[8pt]
+					% [\text{仕事}] = [\text{質量}][\text{長さ}]^2[\text{時間}]^{-2} = [\mathrm{ML}^2\mathrm{T}^{-2}]
+				\end{cases}
+				\label{eq:idou}
+			\end{align*}
+		\item 「定数係数を無視した等式として表すことで物理現象の成り立ちを表している」
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{単位について}
+	\begin{itemize}
+		\item 単位とは、
+		\begin{itemize}
+			\item 「取決めによって定義された同種の物理量の大きさを表す」
+		\end{itemize}
+		\item 標準となる単位系は、
+		\begin{itemize}
+			\item 国際単位系（SI）
+			\footnote{仏: Syst\`eme International d'Unit\'es、英: International System of Units、フランス語の略称なので SI となる。}
+			\item 次元の基本量に対応した７つの基本単位
+		\end{itemize}
+		\item 任意の物理量の値 $Q$ は
+		\begin{itemize}
+			\item その大きさを表す数値 $n$ と単位 $U$ との積
+			\item 単位のとり方に依存して数値は変更を受ける
+			\begin{itemize}
+				\item たとえば、時間の単位として「秒」で表して定数係数が大きすぎる場合は\\「時」、「年」等も用いる
+				% \item 臨機応変に対応しましょう。
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{組立単位}
+    \begin{block}{組立単位とは}
+        \begin{itemize}
+			\item 基本単位の組み合わせで、
+			\item 固有の名称と記号で表される
+			\item SI 組立単位としては、22 個
+		\end{itemize}
+    \end{block}
+
+    \begin{block}{レオロジーに関連する主要なものは}
+        \small
+        \centering
+		\begin{tabular}{|c|c|c|c|} \hline
+			組立量 		& 名称					& 記号		& SI 基本単位では 	\\ \hline \hline
+			周波数		& ヘルツ		& Hz		&  s$^{-1}$ 					\\ \hline
+			力			& ニュートン	& N 		& m$\cdot$kg$\cdot$s$^{-2}$ 	\\ \hline
+			応力		& パスカル		& Pa 		& N/m$^2$ = m$^{-1}\cdot$kg$\cdot$s$^{-2}$ \\ \hline
+			エネルギー	& ジュール		& J 		& N$\cdot$m = m$^{2}\cdot$kg$\cdot$s$^{-2}$ \\ \hline
+			粘度		& パスカル秒			& Pa$\cdot$s & m$^{-1}\cdot$kg$\cdot$s$^{-1}$ \\ \hline
+		\end{tabular}
+    \end{block}
+\end{frame}
+
+\subsection{次元についてもう少し}
+\begin{frame}
+	\frametitle{次元解析とは}
+	\begin{block}{次元解析とは？}
+		\begin{itemize}
+			\item 物理量における各種の次元から、
+			\item 複数の物理量の間の関係を予測すること
+		\end{itemize}
+	\end{block}
+	\begin{block}{「次元一致の原理」}
+		\begin{itemize}
+			\item 物理的な関係を表す数式において、
+			\item 両辺の次元が一致しなくてはならない。
+			\item この規則を逆に利用すると、
+			\begin{itemize}
+				\item 既知の量を組み合わせて求めたい未知の物理量と、
+				\item 次元に一致するように式を立てれば、
+				\item それは正しい関係式になっている可能性が高い。
+			\end{itemize} 
+			% \item 例：バネの調和振動の周期 $T=A\sqrt{\dfrac{m}{k}}$
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{次元解析の例}
+		バネの調和振動
+
+		水平面上に質量 $m$ の物体をおき、垂直に立った壁と物体との間をばね定数 $k$ のばねで結ぶ。
+		ばねの自然長の状態から物体を $x$ だけずらし、静かに手を離すと物体は振動運動を始める。
+		このときの振動の周期（1振動にかかる時間）$T$ を与える式を推測する。
+		水平面との摩擦や空気抵抗は考えない。
+
+式に含まれるであろう定数は、物体の質量 m、ばね定数 k、初期変位 x の3つ
+長さの次元を [L]、質量の次元を [M]、時間の次元を [T] とすれば、それぞれの定数および周期 T の次元は $[m]=[M],[k]={\mathsf{MT}}^{-2},[x]={\mathsf{L}},[T]={\mathsf{T}}$
+
+% {\displaystyle [m]={\mathsf {M}},[k]={\mathsf {MT}}^{-2},[x]={\mathsf {L}},[T]={\mathsf {T}}}である。
+% この中で長さの次元{\displaystyle {\mathsf {L}}}{\mathsf  {L}}を含んでいるのは初期変位 x のみなので、式に含めることができない。なぜなら式の左辺と右辺では次元が一致しなくてはならず、初期変位を含めるならば両辺に同じだけかける必要があり、それならば無くても同じだからである。
+
+% 次元が{\displaystyle {\mathsf {T}}}{\mathsf  {T}}になるように m と k を組み合わせる方法は一つしかない。結果次の式が求まる。
+
+% {\displaystyle T=A{\sqrt {\frac {m}{k}}}}T=A{\sqrt  {{\frac  {m}{k}}}}
+比例係数 A は無次元量の定数で次元解析から求めることはできない。
+\end{frame}
+
+\begin{frame}
+	\frametitle{無次元量について}
+		\begin{block}{無次元量とは？}
+			\begin{itemize}
+				\item 無次元量は、無次元数、無名数とも呼ばれ、
+				\item 全ての次元指数がゼロの量。
+				\item 多くの無次元量が、1900年代初期、特に流体力学と熱伝導の分野で作られた。
+			\end{itemize}
+		\end{block}
+		\begin{block}{その特徴}
+			\begin{itemize}
+				\item 無次元量の数値は\textcolor{red}{単位の選択に依らない。}
+				\item 異なる系の\textcolor{red}{特徴を比較}するのにとても便利。
+				\item 一般的な現象を特徴付ける物理量として、物理学、工学、経済など多くの分野で広く活用
+				\item 当然、レオロジーでも。
+			\end{itemize}
+		\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{無次元量の例}
+		\begin{columns}[T, onlytextwidth]
+			\column{.5\linewidth}
+				\begin{block}{簡単な例として、比率}
+					\begin{itemize}
+						\item 同じ種類の2つの量の比として定義される
+						% \begin{itemize}
+						% 	\item 傾きは水平距離に対する鉛直距離の比
+						% 	\item 「長さ」という同種の量の比
+						% \end{itemize}
+						\item 変形の尺度の「ひずみ」
+						\begin{itemize}
+							\item 変形前の長さに対する長さの変化の比
+						\end{itemize}
+						\item 濃度
+						\begin{itemize}
+							\item 例：アルコール度数はアルコール飲料の容積に対するエタノールの容積の比
+						\end{itemize}
+					\end{itemize}
+				\end{block}
+			\column{.46\linewidth}
+				\begin{block}{もう少し難しい例}
+					\begin{itemize}
+						\item 偏差値\\母集団の中での位置
+						\item レイノルズ数\\流れ場の状態を表す
+						\item ヌセルト数\\伝熱を扱う
+						\item プラントル数\\熱輸送と運動量輸送の比。
+						% \item レイリー数\\熱対流を扱う
+						\item ポアソン比\\ひずみ量の比。
+					\end{itemize}
+				\end{block}
+		\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{無次元数の使い方}
+	\begin{block}{レイノルズ数：}
+		\begin{itemize}
+			\item 流体の慣性力と粘性力（同じ次元の物理量）の比
+			\item 流れ場の状態（運動量輸送における移流と拡散の比）を表す
+		\end{itemize}
+	\end{block}
+	\begin{block}{その使い方}
+		\begin{itemize}
+			\item 形は同じで大きさが異なる物体回りの流れを比較
+			\begin{itemize}
+				\item 両者のレイノルズ数が同じであれば、
+				\item 物体回りの流体の流れは相似となり
+				\item サイズは異なるが本質的には同じ現象
+			\end{itemize}
+			\item 風洞実験でモデルと実機を比較
+			\item  特に乱流を扱う際は必須のパラメーター
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{まとめ}
+	ここでは、レオロジーを理解するために必要となる準備を行いました。
+	\begin{boxnote}
+		\begin{itemize}
+			\item 数学的な事項の確認
+			\begin{itemize}
+				\item 数学的に書き表すときに基本となる「関数」
+				\item 事象の単純化に重要な「線型性」
+			\end{itemize}
+			\item 物理的に考えるときに必要になること
+			\begin{itemize}
+				\item 物理モデルと線形性
+				\item 「量」、「次元」、「単位」
+			\end{itemize}
+		\end{itemize} 
+	\end{boxnote}
+\end{frame}
+
+\appendix
+\backupbegin
+
+\section{演習問題}
+\subsection{「量について」}
+\begin{frame}
+	\frametitle{「量について」}
+	% \scriptsize
+	% 以下の穴を埋めてください。
+	\begin{itemize}
+		\item \textcolor<2>{black}{量}とは、現象、物体又は物質の持つ属性で、\fbox{\textcolor<1>{white}{定性的に区別}}でき、\\かつ、\fbox{\textcolor<1>{white}{定量的に決定}}できるもの。
+		\item 同じ種類の量同士は\fbox{\textcolor<1>{white}{和と差}}の演算が定義可能
+		\begin{itemize}
+			\item 結果は同じ種類の\fbox{\textcolor<1>{white}{量}}
+			\item \fbox{\textcolor<1>{white}{異なる種類}}の量の和や差には\fbox{\textcolor<1>{white}{意味がない}}
+		\end{itemize}
+		\item 同じ、あるいは、異なる種類の量同士でも\fbox{\textcolor<1>{white}{積や商}}が定義できることがあり、
+		\begin{itemize}
+			\item 長さ同士の積は\fbox{\textcolor<1>{white}{面積}}
+			\item 長さの時間による商は\fbox{\textcolor<1>{white}{速さ}}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\subsection{「次元について」}
+\begin{frame}
+	\frametitle{「次元について」}
+	% \scriptsize
+	% 以下の穴を埋めてください。
+	\begin{itemize}
+		\item \textcolor<2>{black}{次元}とは、注目する「ある量」を、「\fbox{\textcolor<1>{white}{基本量}}の\fbox{\textcolor<1>{white}{積と商}}で表す」考え方ともいえます。
+		\item 国際量体系では、７つの基本量が定められています。レオロジーでよく使う四つの基本量を埋めてください。
+			% \begin{table}[h]
+				\begin{center}
+					\begin{tabular}{|c|c||c|c|} \hline
+						基本量 		& 次元の記号 & SI単位 		& 単位の記号\\ \hline \hline
+						\fbox{\textcolor<1>{white}{長さ}}		& L			& メートル 		& m \\ \hline
+						\fbox{\textcolor<1>{white}{質量}}		& M			& キログラム 	& kg \\ \hline
+						\fbox{\textcolor<1>{white}{時間}}		& T			& 秒 			& s \\ \hline
+						電流		& I			& アンペア 		& A \\ \hline
+						\fbox{\textcolor<1>{white}{熱力学温度}}	& $\Theta$	& ケルビン 		& K \\ \hline
+						物質量		& N			& モル 			& mol \\ \hline
+						光度		& J			& カンデラ 		& cd \\ \hline
+					\end{tabular}
+				\end{center}
+			% \end{table}
+	\end{itemize}
+\end{frame}
+
+\subsection{「単位について」}
+\begin{frame}
+	\frametitle{「単位について」}
+	% \scriptsize
+	% 以下の穴を埋めてください。
+	\begin{itemize}
+		\item \textcolor<2>{black}{単位}を簡単に言えば、「取決めによって定義された\fbox{\textcolor<1>{white}{同種の物理量の大きさ}}を表すため」に使うものです。
+		\item 現在、最も広く使われている（取決めによって定義された）単位系は、\fbox{\textcolor<1>{white}{国際単位系（SI）}}です。
+		\item 任意の\fbox{\textcolor<1>{white}{物理量の値}} $Q$ は、その大きさを表す\fbox{\textcolor<1>{white}{数値}} $n$ と単位 $U$ との積として表されることになります。
+		\item 基本単位の組み合わせとして、固有の名称と記号で表される\fbox{\textcolor<1>{white}{組立単位}}というものもあります。
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{「単位について」}
+			\footnotesize
+			\begin{center}
+				% \caption{}
+				% \label{tab:kumitate2}
+				\begin{tabular}{|c|c||c|c|} \hline
+					\textcolor<2>{black}{組立量} 		& 名称					& 記号		& SI 基本単位による表現 	\\ \hline \hline
+					\fbox{\textcolor<1>{white}{周波数}}		& ヘルツ (hertz)		& Hz		&  s$^{-1}$ 					\\ \hline
+					\fbox{\textcolor<1>{white}{力}}			& ニュートン (newton)	& N 		& m$\cdot$kg$\cdot$s$^{-2}$ 	\\ \hline
+					\fbox{\textcolor<1>{white}{応力}}		& パスカル (pascal)		& Pa 		& (N/m$^2$) = m$^{-1}\cdot$kg$\cdot$s$^{-2}$ \\ \hline
+					\fbox{\textcolor<1>{white}{エネルギー}}	& ジュール (joule)		& J 		& (N$\cdot$m) = m$^{2}\cdot$kg$\cdot$s$^{-2}$ \\ \hline
+					\fbox{\textcolor<1>{white}{粘度}}		& パスカル秒			& Pa$\cdot$s & m$^{-1}\cdot$kg$\cdot$s$^{-1}$ \\ \hline
+				\end{tabular}
+			\end{center}
+		% \end{table}
+	% \end{itemize}
+\end{frame}
+
+
+\backupend
+\end{document}

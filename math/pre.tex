@@ -1,0 +1,82 @@
+\usepackage{luatexja}% 日本語したい
+\usepackage[haranoaji,no-math,deluxe,expert,nfssonly,match,scale=1.0]{luatexja-preset}
+\renewcommand{\kanjifamilydefault}{\gtdefault}% 既定をゴシック体に
+
+\usepackage{amssymb,amsmath,ascmac}
+
+\usepackage{multirow}
+\usepackage{lltjext}
+
+\usepackage{siunitx}
+\usepackage{physics}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+\ExplSyntaxOn
+\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+\ExplSyntaxOff
+
+\usepackage{animate}
+\usepackage{svg}
+\usepackage{tikz}
+\usepackage{xparse}
+%%%%%%%%%%%%%%%%%%%%%%%
+\graphicspath{{../fig/}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{positioning}
+\usetikzlibrary{angles,quotes}
+\usetikzlibrary{math, calc}
+\usetikzlibrary{decorations.markings,decorations.pathmorphing}
+%% define fancy arrow. \tikzfancyarrow[<option>]{<text>}. ex: \tikzfancyarrow[fill=red!5]{hoge}
+\tikzset{arrowstyle/.style n args={2}{inner ysep=0.1ex, inner xsep=0.5em, minimum height=2em, draw=#2, fill=black!20, font=\sffamily\bfseries, single arrow, single arrow head extend=0.4em, #1,}}
+\NewDocumentCommand{\tikzfancyarrow}{O{fill=black!20} O{none}  m}{
+\tikz[baseline=-0.5ex]\node [arrowstyle={#1}{#2}] {#3 \mathstrut};}
+
+%目次スライド
+% \AtBeginSection[]{
+%   \frame{\tableofcontents[currentsection]}
+% }
+%アペンディックスのページ番号除去
+\newcommand{\backupbegin}{
+\newcounter{framenumberappendix}
+\setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+\addtocounter{framenumberappendix}{-\value{framenumber}}
+\addtocounter{framenumber}{\value{framenumberappendix}} 
+}
+
+%%%%%%%%%%%  theme  %%%%%%%%%%%
+% \usetheme{Copenhagen}
+\usetheme{metropolis}
+% \usetheme{CambridgeUS}
+% \usetheme{Berlin}
+
+%%%%%%%%%%%  inner theme  %%%%%%%%%%%
+% \useinnertheme{default}
+
+% %%%%%%%%%%%  outer theme  %%%%%%%%%%%
+\useoutertheme{default}
+% \useoutertheme{infolines}
+
+%%%%%%%%%%%  color theme  %%%%%%%%%%%
+%\usecolortheme{structure}
+
+%%%%%%%%%%%  font theme  %%%%%%%%%%%
+\usefonttheme{professionalfonts}
+%\usefonttheme{default}
+
+%%%%%%%%%%%  degree of transparency  %%%%%%%%%%%
+%\setbeamercovered{transparent=30}
+
+%%%%%%%%%%%  numbering  %%%%%%%%%%%
+% \setbeamertemplate{numbered}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \setbeamertemplate{items}[default]
+\setbeamertemplate{enumerate item}[default]
+
+% セクション名だけをTOCに出力
+\setcounter{tocdepth}{1}
+
